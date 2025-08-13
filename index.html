@@ -1,226 +1,344 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AceleradorTech - Tu Socio Tecnológico Digital</title>
-    <meta name="description" content="Diseñamos, construimos y mantenemos páginas web rápidas, seguras y profesionales. Nos convertimos en tu socio tecnológico para que te enfoques en tu negocio.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AceleradorTech — Tecnología para Crecer. Socios para Confiar.</title>
+    <meta name="description" content="Unimos desarrollo web de alta calidad, aplicaciones a medida y estrategia comercial para hacer crecer tu negocio. Precios transparentes y sin letra chica." />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0A0A0A;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px;
+            background-image: radial-gradient(circle at top left, rgba(57, 255, 20, 0.05), transparent 30%), radial-gradient(circle at bottom right, rgba(57, 255, 20, 0.05), transparent 30%);
         }
-        .neon-accent { color: #39FF14; }
-        .neon-bg { background-color: #39FF14; }
-        .neon-border { border-color: #39FF14; }
+        .accent { color: #39FF14; }
+        .accent-bg { background-color: #39FF14; }
+        .accent-border { border-color: #39FF14; }
         html { scroll-behavior: smooth; }
-        @keyframes fade-in-down {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        @keyframes fade-in-up {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
+        .interactive-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 0 30px rgba(57, 255, 20, 0.1);
         }
-        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
-        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+        .plan-recommended {
+             border-color: #39FF14;
+        }
+        .interactive-card:hover.plan-recommended {
+             border-color: #39FF14;
+        }
+        .faq-item details > summary::-webkit-details-marker { display: none; }
+        .faq-item summary { position: relative; padding-right: 2rem; }
+        .faq-item summary .icon {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%) rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+        .faq-item details[open] summary .icon {
+            transform: translateY(-50%) rotate(45deg);
+        }
+        .main-cta:hover {
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+        }
+        .process-line-container {
+            width: 100%;
+            height: 2px;
+            background-color: #374151; /* gray-700 */
+        }
+        .process-line {
+            width: 0%;
+            height: 2px;
+            background: #39FF14;
+            transition: width 1.5s ease-out;
+        }
+        .process-line.in-view {
+            width: 100%;
+        }
     </style>
 </head>
-<body class="bg-[#0A0A0A] text-white overflow-x-hidden">
-
+<body class="text-white tracking-tight leading-relaxed">
     <!-- HEADER -->
-    <header class="absolute top-0 left-0 right-0 z-20 py-4 px-6 md:px-12">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">Acelerador<span class="neon-accent">Tech</span></a>
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#servicios" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Servicios</a>
-                <a href="#planes" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Planes</a>
-                <a href="#contacto" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Nosotros</a>
-                <a href="#contacto" class="neon-bg text-black font-semibold py-2 px-6 rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105">
-                    CONTACTO
-                </a>
+    <header class="fixed w-full bg-[#0A0A0A]/80 backdrop-blur-sm z-50 px-4 sm:px-6 py-3 border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="text-2xl font-bold">Acelerador<span class="accent">Tech</span></a>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+                <a href="#servicios" class="hover:accent transition-colors">Servicios</a>
+                <a href="#proceso" class="hover:accent transition-colors">Proceso</a>
+                <a href="#planes" class="hover:accent transition-colors">Planes</a>
+                <a href="#diagnostico" class="hover:accent transition-colors">Estándares</a>
+                <a href="#faq" class="hover:accent transition-colors">FAQ</a>
+                <a href="#contacto" class="accent-bg text-black px-4 py-2 rounded-lg font-semibold hover:bg-white transition-colors">Contacto</a>
             </nav>
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-white">
-                    <svg id="menu-icon-open" class="h-8 w-8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
         </div>
     </header>
 
-    <!-- MOBILE MENU -->
-    <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex-col items-center justify-center">
-        <button id="menu-close-btn" class="absolute top-6 right-6 text-white">
-            <svg class="h-8 w-8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-        </button>
-        <nav class="flex flex-col items-center space-y-8">
-            <a href="#servicios" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Servicios</a>
-            <a href="#planes" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Planes</a>
-            <a href="#contacto" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Nosotros</a>
-            <a href="#contacto" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Contacto</a>
-        </nav>
-    </div>
-
     <main>
-        <!-- HERO SECTION -->
-        <section class="min-h-screen flex items-center justify-center pt-32 pb-16 px-4">
-            <div class="container mx-auto text-center">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-down">
-                    Tu Presencia Digital, <span class="neon-accent">Resuelta.</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in-up">
-                    Nos convertimos en tu socio tecnológico. Diseñamos, construimos y mantenemos tu página web para que te dediques a lo que realmente importa: tu negocio.
-                </p>
-                <a href="#planes" class="neon-bg text-black font-bold py-4 px-10 rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 inline-block animate-fade-in-up" style="animation-delay: 0.2s;">
-                    Conoce Nuestros Planes
-                </a>
+        <!-- HERO -->
+        <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-cover bg-center bg-fixed" style="background-image:url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?fit=crop&w=1950&q=80');">
+            <div class="absolute inset-0 bg-black/70"></div>
+            <div class="relative bg-black/50 backdrop-blur-sm p-8 rounded-xl border border-gray-800/50 max-w-4xl">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Tecnología para Crecer. <br><span class="accent">Socios para Confiar.</span></h1>
+                <p class="max-w-3xl text-gray-300 mb-8 text-base md:text-lg">Vamos más allá de la página web. Creamos los sistemas, aplicaciones y automatizaciones que tu negocio necesita para escalar de verdad.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#planes" class="main-cta accent-bg text-black font-semibold px-6 py-3 rounded-lg hover:bg-white transition-all transform hover:scale-105">Ver Planes y Precios</a>
+                    <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quisiera%20asesor%C3%ADa%20para%20mi%20negocio." target="_blank" class="bg-green-600/20 border border-green-400/60 text-green-300 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105 flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.999C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12a11.95 11.95 0 0 1-6.357-1.84L.057 24zM6.6 19.2c1.735 1.068 3.77 1.631 5.861 1.631 6.448 0 10.429-5.316 10.429-10.429C22.89 3.953 18.908 0 12.46 0S2.031 3.953 2.031 10.402c0 2.041.548 4.033 1.588 5.775L3.2 20.8l3.4-1.6zm1.5-11.3c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s1 2.4 1.2 2.6c.2.2 1.8 2.9 4.4 4 2.2.9 2.7.8 3.2.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.1-1.3-.1-.2-.2-.3-.5-.5s-1.6-.8-1.8-.9c-.2-.1-.4-.1-.6.1-.2.2-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-1-.9-1.5-2-1.7-2.3-.2-.3 0-.5.1-.7.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.5-1.3-.7-1.8z"/></svg>
+                        Hablar por WhatsApp
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- SERVICIOS SECTION -->
-        <section id="servicios" class="py-20 px-4">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">Un Socio Tecnológico, no un simple Proveedor</h2>
-                <p class="text-gray-400 max-w-3xl mx-auto mb-12">Te damos la tranquilidad de que tu operación digital funciona sin problemas.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
-                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                        <h3 class="text-2xl font-bold mb-3">Diseño y Desarrollo Web</h3>
-                        <p class="text-gray-400">Creamos sitios web a medida, desde páginas corporativas hasta plataformas complejas. Modernas, rápidas y optimizadas para todos los dispositivos.</p>
+        <!-- SERVICIOS -->
+        <section id="servicios" class="py-16 sm:py-20 px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Un Ecosistema Digital a tu Medida</h2>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12">Desde la web fundacional hasta la automatización de tus procesos clave.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800 text-left interactive-card">
+                    <h3 class="text-xl font-bold mb-2">Presencia Digital y E-commerce</h3>
+                    <p class="text-gray-400 text-sm">Sitios web corporativos, tiendas online con Shopify y plataformas a medida. Rápidas, seguras y optimizadas para vender.</p>
+                </div>
+                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800 text-left interactive-card">
+                    <h3 class="text-xl font-bold mb-2">Posicionamiento y Marca</h3>
+                    <p class="text-gray-400 text-sm">Estrategia de marca, identidad visual y optimización de perfiles (SEO) para destacar sobre tu competencia.</p>
+                </div>
+                <div class="p-6 bg-gray-900/50 rounded-xl border border-gray-800 text-left interactive-card">
+                    <h3 class="text-xl font-bold mb-2">Prospección Comercial</h3>
+                    <p class="text-gray-400 text-sm">Embudos de venta, gestión de campañas (Google/Meta Ads) y generación de leads para tu equipo comercial.</p>
+                </div>
+                <div class="p-6 bg-gray-900/50 rounded-xl border-2 accent-border text-left interactive-card">
+                    <h3 class="text-xl font-bold mb-2"><span class="accent">Desarrollo a Medida</span></h3>
+                    <p class="text-gray-400 text-sm">¿Necesitas más? Creamos aplicaciones personalizadas, automatizamos procesos e integramos sistemas vía API para escalar tu operación.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESO -->
+        <section id="proceso" class="py-16 sm:py-20 px-4 bg-[#101010]">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-16">Nuestro Proceso de Trabajo</h2>
+                <div class="grid md:grid-cols-4 gap-8 relative">
+                    <div class="absolute top-8 left-0 right-0 h-0.5 bg-gray-700 hidden md:block" aria-hidden="true">
+                        <div id="process-line-id" class="process-line"></div>
                     </div>
-                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <h3 class="text-2xl font-bold mb-3">Mantenimiento y Seguridad</h3>
-                        <p class="text-gray-400">Duerme tranquilo. Nos encargamos de las actualizaciones, copias de seguridad y monitoreo de seguridad 24/7 para prevenir problemas antes de que ocurran.</p>
+                    <div class="relative flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full accent-bg text-black flex items-center justify-center text-2xl font-bold mb-4 z-10 flex-shrink-0">1</div>
+                        <h3 class="font-semibold mb-2">Diagnóstico</h3>
+                        <p class="text-sm text-gray-400">Entendemos tus metas, tu público y tus desafíos actuales.</p>
                     </div>
-                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <h3 class="text-2xl font-bold mb-3">Soporte y Migración</h3>
-                        <p class="text-gray-400">Gestionamos tus correos corporativos y te asistimos en la migración de tus sistemas actuales. Estamos para resolver dudas y ejecutar los cambios que tu negocio necesite.</p>
+                    <div class="relative flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full accent-bg text-black flex items-center justify-center text-2xl font-bold mb-4 z-10 flex-shrink-0">2</div>
+                        <h3 class="font-semibold mb-2">Estrategia</h3>
+                        <p class="text-sm text-gray-400">Diseñamos la solución técnica y de marketing a tu medida.</p>
+                    </div>
+                    <div class="relative flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full accent-bg text-black flex items-center justify-center text-2xl font-bold mb-4 z-10 flex-shrink-0">3</div>
+                        <h3 class="font-semibold mb-2">Implementación</h3>
+                        <p class="text-sm text-gray-400">Construimos, probamos y lanzamos tu ecosistema digital.</p>
+                    </div>
+                    <div class="relative flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-full accent-bg text-black flex items-center justify-center text-2xl font-bold mb-4 z-10 flex-shrink-0">4</div>
+                        <h3 class="font-semibold mb-2">Acompañamiento</h3>
+                        <p class="text-sm text-gray-400">Te damos soporte continuo y optimizamos para el crecimiento.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PLANES SECTION -->
-        <section id="planes" class="py-20 px-4 bg-black bg-opacity-20">
-            <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-2">Nuestro Modelo de Socio Tecnológico</h2>
-                <p class="text-gray-400 max-w-3xl mx-auto mb-12">Un setup inicial accesible y un plan mensual que garantiza tu tranquilidad y el óptimo funcionamiento de tu web.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    
-                    <!-- Plan 1: Socio Digital -->
-                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 flex flex-col text-left">
-                        <h3 class="text-2xl font-bold mb-2">Plan Socio Digital</h3>
-                        <p class="text-gray-400 mb-4">Ideal para profesionales y empresas que necesitan una presencia sólida y confiable.</p>
-                        <div class="mb-2">
-                            <p class="text-4xl font-bold inline-block mr-2">$49.990</p>
-                            <p class="inline-block text-gray-400">CLP / Mensual</p>
+        <!-- FUNDADOR -->
+        <section class="py-16 sm:py-20 px-4">
+            <div class="flex flex-col md:flex-row items-center max-w-5xl mx-auto gap-8 md:gap-12 text-center md:text-left">
+                <img src="https://placehold.co/300x300/0A0A0A/39FF14?text=GF" alt="Foto de Gustavo Franco" class="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover border-4 accent-border shadow-2xl flex-shrink-0" />
+                <div class="max-w-3xl">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Una Solución Nacida de la Experiencia</h2>
+                    <p class="text-gray-300 text-base md:text-lg">
+                        AceleradorTech nació para dar respuesta a los desafíos de nuestra propia consultora, <a href="https://gustavofranco.cl" target="_blank" class="accent font-medium hover:underline">gustavofranco.cl</a>. Lo que comenzó como una solución interna para nuestra presencia digital y prospección, tomó fuerza al ayudar a empresas amigas. Hoy, ofrecemos formalmente estas mismas herramientas a negocios que, como nosotros, buscan crecer con una base tecnológica sólida y confiable.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PLANES -->
+        <section id="planes" class="py-16 sm:py-20 px-4 bg-black/20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl font-bold mb-2 text-center">Planes de Socio Tecnológico</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-12 text-center">Total transparencia. Compara qué incluye cada plan, la infraestructura y el soporte. Sin letra chica.</p>
+
+                <div class="grid md:grid-cols-3 gap-8 text-left">
+                    <!-- Plan 1 -->
+                    <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-800 flex flex-col interactive-card">
+                        <h3 class="text-xl font-bold mb-1">Cimiento Digital</h3>
+                        <p class="text-gray-400 mb-4 text-sm">La base profesional para una presencia online sólida.</p>
+                        <div class="my-4">
+                            <p class="text-sm text-gray-400">Setup: <span class="font-bold text-white">$172.000</span></p>
+                            <p class="text-sm text-gray-400">Mensual: <span class="font-bold text-white">$46.000</span></p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-6">Valores netos. Impuestos de servicios profesionales no incluidos.</p>
-                        <p class="text-sm text-gray-400 mb-6">Requiere un pago único de implementación y diseño desde $149.990 (neto).</p>
-                        <ul class="space-y-3 text-gray-300 mb-8 flex-grow">
-                            <li>✔️ <b>Hosting</b> de alta velocidad</li>
-                            <li>✔️ <b>Certificado de Seguridad</b> SSL</li>
-                            <li>✔️ <b>Actualizaciones</b> de seguridad y plugins</li>
-                            <li>✔️ <b>Copias de seguridad</b> semanales</li>
-                            <li>✔️ <b>Soporte</b> vía ticket y email</li>
-                            <li>✔️ <b>Gestión de hasta 10</b> correos corporativos</li>
-                            <li>✔️ <b>2 horas</b> para modificaciones mensuales</li>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 flex-grow text-sm">
+                            <li>Sitio institucional (hasta 5 secciones) + Blog</li>
+                            <li>Hosting compartido <b>5 GB</b> + SSL</li>
+                            <li>Backups <b>semanales</b> (retención 7 días)</li>
+                            <li><b>Correos:</b> hasta 5 casillas en hosting*</li>
+                            <li>SEO técnico base (sitemap, Search Console)</li>
+                            <li>Soporte vía Email/Tickets (Resp. 24-48h)</li>
                         </ul>
-                        <a href="#contacto" class="mt-auto w-full text-center bg-transparent border neon-border neon-accent font-bold py-3 px-8 rounded-lg hover:neon-bg hover:text-black transition-all duration-300">Contratar Plan</a>
+                         <p class="text-xs text-gray-500 mt-4">*Correos adicionales disponibles. Se recomienda proveedor dedicado (Google/Zoho) si el correo es crítico.</p>
                     </div>
 
-                    <!-- Plan 2: Socio Estratégico (Recomendado) -->
-                    <div class="bg-black bg-opacity-60 p-8 rounded-2xl border-2 neon-border flex flex-col text-left transform md:scale-105">
-                         <p class="absolute -top-4 left-1/2 -translate-x-1/2 neon-bg text-black text-sm font-bold px-3 py-1 rounded-full">RECOMENDADO</p>
-                        <h3 class="text-2xl font-bold mb-2">Plan Socio Estratégico</h3>
-                        <p class="text-gray-400 mb-4">Para empresas en crecimiento que requieren soporte prioritario y mayor capacidad.</p>
-                        <div class="mb-2">
-                            <p class="text-4xl font-bold inline-block mr-2">$69.990</p>
-                            <p class="inline-block text-gray-400">CLP / Mensual</p>
+                    <!-- Plan 2 -->
+                    <div class="relative p-6 bg-gray-900/50 rounded-2xl border-2 flex flex-col interactive-card plan-recommended">
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 accent-bg text-black text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</span>
+                        <h3 class="text-xl font-bold mb-1">Motor de Crecimiento</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Soporte ágil y la capacidad que tu equipo necesita.</p>
+                        <div class="my-4">
+                            <p class="text-sm text-gray-400">Setup: <span class="font-bold text-white">$229.000</span></p>
+                            <p class="text-sm text-gray-400">Mensual: <span class="font-bold text-white">$69.000</span></p>
                         </div>
-                        <p class="text-xs text-gray-500 mb-6">Valores netos. Impuestos de servicios profesionales no incluidos.</p>
-                        <p class="text-sm text-gray-400 mb-6">Requiere un pago único de implementación y diseño desde $149.990 (neto).</p>
-                        <ul class="space-y-3 text-gray-300 mb-8 flex-grow">
-                            <li>✔️ <b>Todo lo del Plan Socio Digital</b></li>
-                            <li>✔️ <b>Copias de seguridad</b> diarias</li>
-                            <li>✔️ <b>Soporte prioritario</b> vía WhatsApp</li>
-                            <li>✔️ <b>Gestión de hasta 25</b> correos corporativos</li>
-                            <li>✔️ <b>Asistencia en migración</b> de correos existentes</li>
-                            <li>✔️ <b>4 horas</b> para modificaciones mensuales</li>
-                            <li>✔️ <b>Informe de rendimiento</b> y analítica web</li>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 flex-grow text-sm">
+                            <li>Todo lo del plan Cimiento</li>
+                            <li>Hosting premium <b>20 GB</b> + optimización</li>
+                            <li>Backups <b>diarios</b> (retención 14 días)</li>
+                            <li><b>Correos:</b> hasta 15 casillas (proveedor prof.)</li>
+                            <li><b>Soporte Prioritario</b> vía WhatsApp (Resp. < 4h)</li>
+                            <li><b>Agenda de Reuniones Online</b> (vía Calendly)</li>
+                            <li><b>Informe Mensual de Visitas</b> (Analytics)</li>
+                            <li><b>Asesoría Estratégica</b> en SEO y Contenidos</li>
                         </ul>
-                         <a href="#contacto" class="mt-auto w-full text-center neon-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-white transition-all duration-300">Contratar Plan</a>
+                    </div>
+
+                    <!-- Plan 3 -->
+                    <div class="p-6 bg-gray-900/50 rounded-2xl border border-gray-800 flex flex-col interactive-card">
+                        <h3 class="text-xl font-bold mb-1">Socio Estratégico</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Escala tu captación con embudos y anuncios.</p>
+                        <div class="my-4">
+                            <p class="text-sm text-gray-400">Setup: <span class="font-bold text-white">$286.000</span></p>
+                            <p class="text-sm text-gray-400">Mensual: <span class="font-bold text-white">$92.000</span></p>
+                        </div>
+                        <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+                            <li>Todo lo del plan Motor</li>
+                            <li>Embudo de ventas (Landing + VSL)</li>
+                            <li>Automatización con CRM (HubSpot/Zoho)</li>
+                            <li><b>Gestión de Campañas de Pago</b> (Google/Meta)</li>
+                            <li>Hasta 25 casillas de correo o integración</li>
+                            <li><b>Sesión Estratégica Trimestral</b> (Roadmap)</li>
+                        </ul>
+                        <p class="text-xs text-gray-500 mt-4">El presupuesto de anuncios se paga directo al proveedor y no está incluido.</p>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-gray-500 mt-8">Valores finales. Impuestos de servicios profesionales incluidos.</p>
+            </div>
+        </section>
+
+        <!-- DIAGNOSTICO -->
+        <section id="diagnostico" class="py-16 sm:py-20 px-4 bg-[#101010]">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-2">Checklist de Estándares de Calidad</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-10">No todos los servicios de desarrollo web son iguales. Compara los puntos clave que diferencian una web profesional de una básica.</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="min-w-full w-full text-left text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-700">
+                                <th class="p-3 font-semibold w-2/5">Criterio Técnico y de Servicio</th>
+                                <th class="p-3 font-semibold text-center">Estándar Común del Mercado</th>
+                                <th class="p-3 font-semibold text-center accent-bg text-black rounded-t-lg">Estándar AceleradorTech</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Velocidad de Carga (Core Web Vitals)</td><td class="p-3 text-center text-yellow-400">A menudo descuidada</td><td class="p-3 text-center text-green-400 font-bold">Optimización Prioritaria</td></tr>
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Estrategia SEO y Contenidos</td><td class="p-3 text-center text-yellow-400">Enfoque solo en diseño</td><td class="p-3 text-center text-green-400 font-bold">SEO técnico y estratégico desde el inicio</td></tr>
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Seguridad de Correos (SPF/DKIM)</td><td class="p-3 text-center text-red-400">Generalmente ausente</td><td class="p-3 text-center text-green-400 font-bold">Configuración Completa</td></tr>
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Backups Automatizados y Accesibles</td><td class="p-3 text-center text-red-400">Manuales o inexistentes</td><td class="p-3 text-center text-green-400 font-bold">Diarios y a tu disposición</td></tr>
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Propiedad de Activos (Dominio, Hosting)</td><td class="p-3 text-center text-red-400">En manos de la agencia</td><td class="p-3 text-center text-green-400 font-bold">100% del Cliente, Siempre</td></tr>
+                            <tr class="hover:bg-gray-500/5"><td class="p-3">Cláusula de Permanencia</td><td class="p-3 text-center text-red-400">Común (6-12 meses)</td><td class="p-3 text-center text-green-400 font-bold">Ninguna. Nos eliges por calidad.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="py-16 sm:py-20 px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Preguntas Frecuentes</h2>
+                <div class="space-y-4">
+                    <div class="faq-item bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">¿Cuánto tiempo tarda en estar lista mi web?<span class="icon text-xl accent">+</span></summary>
+                            <p class="text-gray-400 text-sm mt-4">Nuestro proceso es ágil. Para un sitio estándar, apuntamos a tener una primera versión para tu revisión en 5 días hábiles. Luego, dedicamos otros 5 días hábiles para implementar tus ajustes y realizar el lanzamiento final. En total, un proceso de 2 semanas bien estructurado.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">Si migramos los correos, ¿se pierde información?<span class="icon text-xl accent">+</span></summary>
+                            <p class="text-gray-400 text-sm mt-4">Absolutamente no. La integridad de tu información es nuestra máxima prioridad. Realizamos una migración completa de todas las casillas, replicando correos, carpetas y contactos en el nuevo proveedor. El proceso es transparente para tu equipo y garantizamos que no se perderá ni un solo dato.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">¿Puedo actualizar el contenido yo mismo?<span class="icon text-xl accent">+</span></summary>
+                            <p class="text-gray-400 text-sm mt-4">Nuestro modelo se basa en ser tu equipo tecnológico. Para garantizar la calidad, seguridad y coherencia del sitio, todas las modificaciones se gestionan a través de nosotros y están incluidas en tu plan mensual. Para blogs, te facilitamos un sistema simple para que nos envíes el contenido y nosotros lo maquetamos y publicamos por ti, optimizado para SEO.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">¿Qué significa que soy dueño de mis activos?<span class="icon text-xl accent">+</span></summary>
+                            <p class="text-gray-400 text-sm mt-4">Significa que el dominio, el hosting y todo el código desarrollado se registran y configuran a tu nombre. Si decides dejar de trabajar con nosotros, te quedas con todo sin trabas ni costos ocultos.</p>
+                        </details>
+                    </div>
+                    <div class="faq-item bg-gray-900/50 p-4 rounded-lg border border-gray-800">
+                        <details>
+                            <summary class="font-semibold cursor-pointer flex justify-between items-center">¿Por qué es obligatorio el plan mensual?<span class="icon text-xl accent">+</span></summary>
+                            <p class="text-gray-400 text-sm mt-4">Es nuestra mayor garantía de calidad. Un sitio web profesional no es un producto de 'un solo pago', es un activo vivo que requiere monitoreo constante: actualizaciones de seguridad, backups, optimización y reacción rápida ante cualquier incidencia. Nuestro modelo de "Socio Tecnológico" asegura que tu inversión se mantenga segura y operativa en el tiempo.</p>
+                        </details>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACTO SECTION -->
-        <section id="contacto" class="py-20 px-4">
-            <div class="container mx-auto text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos de tu Proyecto</h2>
-                <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
-                    Somos un equipo liderado por Gustavo Franco, arquitecto y desarrollador con una visión que combina el pensamiento estructurado y la atención al detalle de la arquitectura con la agilidad y el poder de la tecnología. No solo construimos sitios web; diseñamos ecosistemas digitales eficientes y escalables para que nuestros socios puedan prosperar.
-                </p>
-                <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 inline-block">
-                    <p class="text-lg text-gray-300">Email: <a href="mailto:contacto@aceleradortech.com" class="font-bold neon-accent hover:text-white">contacto@aceleradortech.com</a></p>
-                    <p class="text-lg text-gray-300 mt-2">Teléfono: <a href="tel:+56958101807" class="font-bold neon-accent hover:text-white">+56 9 5810 1807</a></p>
-                    <p class="text-lg text-gray-300 mt-2">Ubicación: <span class="font-bold text-gray-200">Mons. Escrivá de Balaguer 14360, Lo Barnechea, Santiago.</span></p>
-                </div>
+        <!-- CONTACTO -->
+        <section id="contacto" class="py-16 sm:py-20 px-4 text-center bg-[#101010]">
+            <h2 class="text-3xl font-bold mb-4">Hablemos de tu Proyecto</h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">Agenda una llamada de diagnóstico gratuita o escríbenos por WhatsApp. Respuesta en horario hábil (Chile).</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:contacto@aceleradortech.com" class="main-cta accent-bg text-black font-semibold px-6 py-3 rounded-lg hover:bg-white transition-all transform hover:scale-105">Enviar Correo</a>
+                <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quisiera%20asesor%C3%ADa%20para%20mi%20negocio." target="_blank" class="border border-green-400/60 text-green-300 px-6 py-3 rounded-lg font-semibold hover:bg-green-500 hover:text-black transition-all transform hover:scale-105">WhatsApp Directo</a>
             </div>
         </section>
     </main>
-    
-    <!-- FOOTER -->
-    <footer class="text-center text-gray-500 py-8 px-4 border-t border-gray-800">
-        <div class="container mx-auto">
-            <p>&copy; <span id="year"></span> AceleradorTech. Todos los derechos reservados.</p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="hover:neon-accent transition-colors">Términos y Condiciones</a>
-                <span>|</span>
-                <a href="#" class="hover:neon-accent transition-colors">Política de Privacidad</a>
-            </div>
-        </div>
+
+    <footer class="text-center text-gray-500 py-8 border-t border-gray-800/50">
+        <p>&copy; <span id="year"></span> AceleradorTech. Todos los derechos reservados.</p>
+        <p class="text-xs mt-2">Mons. Escrivá de Balaguer 14360, Lo Barnechea, Santiago.</p>
     </footer>
 
     <script>
-        // --- Mobile Menu Logic ---
-        const menuBtn = document.getElementById('menu-btn');
-        const menuCloseBtn = document.getElementById('menu-close-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('hidden');
-            mobileMenu.classList.add('flex');
-        });
-
-        menuCloseBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('hidden');
-            mobileMenu.classList.remove('flex');
-        });
-        
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
-            });
-        });
-
-        // --- Update Year in Footer ---
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        const processLine = document.getElementById('process-line-id');
+        const processSection = document.getElementById('proceso');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    processLine.classList.add('in-view');
+                } else {
+                    // Optional: reset animation when out of view
+                    // processLine.classList.remove('in-view');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if(processSection) {
+            observer.observe(processSection);
+        }
     </script>
 </body>
 </html>
+
