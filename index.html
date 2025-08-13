@@ -1,309 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AceleradorTech — Socio Tecnológico y Comercial</title>
-  <meta name="description" content="Unimos desarrollo web, posicionamiento digital y prospección para hacer crecer tu negocio. Transparencia total en precios y características." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; }
-    .accent { color: #39FF14; }
-    .accent-bg { background-color: #39FF14; }
-    .accent-border { border-color: #39FF14; }
-    .chip { @apply inline-flex items-center gap-2 bg-black/40 border border-gray-800 px-3 py-1 rounded-full text-sm text-gray-300; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AceleradorTech - Tu Socio Tecnológico Digital</title>
+    <meta name="description" content="Diseñamos, construimos y mantenemos páginas web rápidas, seguras y profesionales. Nos convertimos en tu socio tecnológico para que te enfoques en tu negocio.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .neon-accent { color: #39FF14; }
+        .neon-bg { background-color: #39FF14; }
+        .neon-border { border-color: #39FF14; }
+        html { scroll-behavior: smooth; }
+        @keyframes fade-in-down {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-down { animation: fade-in-down 0.8s ease-out forwards; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; }
+    </style>
 </head>
-<body class="text-white">
-  <!-- HEADER -->
-  <header class="fixed w-full bg-[#0A0A0A]/90 backdrop-blur z-50 px-6 py-4">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <a href="#" class="text-2xl font-bold">Acelerador<span class="accent">Tech</span></a>
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#servicios" class="hover:accent">Servicios</a>
-        <a href="#planes" class="hover:accent">Planes</a>
-        <a href="#sectores" class="hover:accent">Sectores</a>
-        <a href="#comparativa" class="hover:accent">Comparativa</a>
-        <a href="#portafolio" class="hover:accent">Portafolio</a>
-        <a href="#contacto" class="accent-bg text-black px-4 py-2 rounded-lg font-semibold">Contacto</a>
-        <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quiero%20asesor%C3%ADa%20para%20mi%20estudio%20jur%C3%ADdico" target="_blank" class="flex items-center gap-2 border border-green-400/40 px-3 py-2 rounded-lg hover:bg-green-400/10 transition">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="text-green-400"><path d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.999C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12a11.95 11.95 0 0 1-6.357-1.84L.057 24zM6.6 19.2c1.735 1.068 3.77 1.631 5.861 1.631 6.448 0 10.429-5.316 10.429-10.429C22.89 3.953 18.908 0 12.46 0S2.031 3.953 2.031 10.402c0 2.041.548 4.033 1.588 5.775L3.2 20.8l3.4-1.6z"/><path d="M8.1 7.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s1 2.4 1.2 2.6c.2.2 1.8 2.9 4.4 4 2.2.9 2.7.8 3.2.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.1-1.3-.1-.2-.2-.3-.5-.5s-1.6-.8-1.8-.9c-.2-.1-.4-.1-.6.1-.2.2-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-1-.9-1.5-2-1.7-2.3-.2-.3 0-.5.1-.7.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.5-1.3-.7-1.8z"/></svg>
-          WhatsApp
-        </a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-[#0A0A0A] text-white overflow-x-hidden">
 
-  <!-- HERO -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-4 bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1556761175-129418cb2dfe?fit=crop&w=1950&q=80');">
-    <div class="bg-black/60 p-8 rounded-lg max-w-4xl">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Tecnología, Estrategia y <span class="accent">Clientes</span></h1>
-      <p class="max-w-3xl text-gray-300 mb-8">De Proptech y geointeligencia a presencia digital y prospección comercial. Construimos ecosistemas para estudios jurídicos, corredores de propiedades, marcas personales y empresas en crecimiento.</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#planes" class="accent-bg text-black font-semibold px-6 py-3 rounded-lg">Ver Planes</a>
-        <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quiero%20asesor%C3%ADa%20para%20mi%20estudio%20jur%C3%ADdico" target="_blank" class="border border-green-400/60 text-green-400 px-6 py-3 rounded-lg font-semibold hover:bg-green-400/10">Hablar por WhatsApp</a>
-      </div>
-      <div class="mt-6 flex flex-wrap justify-center gap-2">
-        <span class="chip">Propiedad total de tus activos</span>
-        <span class="chip">Precios transparentes</span>
-        <span class="chip">Sin permanencia forzada</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FUNDADOR -->
-  <section class="py-20 px-4 flex flex-col md:flex-row items-center max-w-7xl mx-auto gap-8">
-    <img src="https://via.placeholder.com/300" alt="Foto de Gustavo Franco" class="rounded-full w-48 h-48 object-cover border-4 accent-border" />
-    <div class="max-w-3xl">
-      <h2 class="text-3xl font-bold mb-4">Gustavo Franco — Fundador y Director</h2>
-      <p class="text-gray-300">AceleradorTech nace como evolución de nuestra consultoría en <a href="https://gustavofranco.cl" target="_blank" class="accent">gustavofranco.cl</a>: unimos tecnología, datos y marketing para detectar oportunidades (Proptech), construir presencia digital y escalar la captación de clientes.</p>
-    </div>
-  </section>
-
-  <!-- SERVICIOS -->
-  <section id="servicios" class="py-20 px-4 text-center">
-    <h2 class="text-3xl font-bold mb-6">Servicios</h2>
-    <div class="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <div class="p-6 bg-black/40 rounded-xl border border-gray-800">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?fit=crop&w=900&q=80" alt="Desarrollo web" class="rounded-lg mb-4 w-full h-44 object-cover" />
-        <h3 class="text-xl font-bold mb-2">Desarrollo y Presencia Digital</h3>
-        <ul class="list-disc ml-5 text-gray-300 space-y-2 text-left">
-          <li>Sitios rápidos, seguros y responsivos</li>
-          <li>SEO técnico (rendimiento, indexación, schema)</li>
-          <li>Integración con WhatsApp, agenda y CRM</li>
-        </ul>
-      </div>
-      <div class="p-6 bg-black/40 rounded-xl border border-gray-800">
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?fit=crop&w=900&q=80" alt="Branding" class="rounded-lg mb-4 w-full h-44 object-cover" />
-        <h3 class="text-xl font-bold mb-2">Posicionamiento y Marca</h3>
-        <ul class="list-disc ml-5 text-gray-300 space-y-2 text-left">
-          <li>Estrategia de marca y tono</li>
-          <li>Identidad visual y lineamientos</li>
-          <li>Optimización de perfiles y contenidos</li>
-        </ul>
-      </div>
-      <div class="p-6 bg-black/40 rounded-xl border border-gray-800">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?fit=crop&w=900&q=80" alt="Prospección" class="rounded-lg mb-4 w-full h-44 object-cover" />
-        <h3 class="text-xl font-bold mb-2">Prospección Comercial</h3>
-        <ul class="list-disc ml-5 text-gray-300 space-y-2 text-left">
-          <li>Embudo de ventas (landing + VSL + formularios)</li>
-          <li>Automatización email/WhatsApp y remarketing</li>
-          <li>Generación de leads y scoring</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANES -->
-  <section id="planes" class="py-20 px-4 bg-black/20">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-2 text-center">Planes y Setup (incluye impuesto 14,5%)</h2>
-      <p class="text-gray-400 max-w-3xl mx-auto mb-12 text-center">Compará con total claridad: qué incluye cada plan, infraestructura (hosting/correos), soporte y qué queda fuera (gasto en anuncios).</p>
-
-      <div class="grid md:grid-cols-3 gap-8 text-left">
-        <!-- Plan 1 -->
-        <div class="p-6 bg-black/40 rounded-2xl border border-gray-800 flex flex-col">
-          <h3 class="text-xl font-bold mb-1">Cimiento Digital</h3>
-          <p class="text-gray-400 mb-4">Base profesional para salir en serio.</p>
-          <p><b>Setup:</b> $149.990 CLP</p>
-          <p class="mb-2"><b>Mensual:</b> $39.990 CLP</p>
-          <ul class="list-disc ml-5 text-gray-300 space-y-2 flex-grow">
-            <li>Sitio institucional 1–5 secciones + blog</li>
-            <li>Hosting compartido <b>5 GB</b> + SSL</li>
-            <li>Backups <b>semanales</b> del sitio y base de datos (retención 7 días)</li>
-            <li><b>Correos:</b> 1 casilla (2 GB) en hosting compartido*</li>
-            <li>SEO técnico base (rendimiento, sitemap, Search Console)</li>
-            <li>Formulario de contacto + botón WhatsApp</li>
-            <li>1 hora/mes de soporte y mejoras</li>
-          </ul>
-          <p class="text-xs text-gray-500 mt-4">*Los respaldos cubren <b>sitio y base de datos</b>. Los correos del hosting no se respaldan; recomendamos proveedor dedicado (Google/Zoho) si el correo es crítico.</p>
+    <!-- HEADER -->
+    <header class="absolute top-0 left-0 right-0 z-20 py-4 px-6 md:px-12">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Acelerador<span class="neon-accent">Tech</span></a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#servicios" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Servicios</a>
+                <a href="#planes" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Planes</a>
+                <a href="#contacto" class="hover:neon-accent transition-colors duration-300 font-light text-lg">Nosotros</a>
+                <a href="#contacto" class="neon-bg text-black font-semibold py-2 px-6 rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105">
+                    CONTACTO
+                </a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white">
+                    <svg id="menu-icon-open" class="h-8 w-8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
+    </header>
 
-        <!-- Plan 2 -->
-        <div class="relative p-6 bg-black/60 rounded-2xl border-2 accent-border flex flex-col">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 accent-bg text-black text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</span>
-          <h3 class="text-xl font-bold mb-1">Motor de Crecimiento</h3>
-          <p class="text-gray-400 mb-4">Soporte continuo y más capacidad.</p>
-          <p><b>Setup:</b> $199.990 CLP</p>
-          <p class="mb-2"><b>Mensual:</b> $59.990 CLP</p>
-          <ul class="list-disc ml-5 text-gray-300 space-y-2 flex-grow">
-            <li>Todo lo del Cimiento Digital</li>
-            <li>Hosting premium <b>20 GB</b> + SSL + optimización</li>
-            <li>Backups <b>diarios</b> (retención 14 días) + monitor de uptime</li>
-            <li><b>Correos:</b> hasta 5 casillas (2 GB c/u) + configuración SPF/DKIM/DMARC</li>
-            <li>3 horas/mes de soporte y cambios (textos, secciones)</li>
-            <li>Integración con agenda online (Calendly/Google)</li>
-            <li>Reporte de rendimiento mensual (GA4)</li>
-          </ul>
-        </div>
-
-        <!-- Plan 3 -->
-        <div class="p-6 bg-black/40 rounded-2xl border border-gray-800 flex flex-col">
-          <h3 class="text-xl font-bold mb-1">Socio Estratégico Integral</h3>
-          <p class="text-gray-400 mb-4">Escala tu captación con embudos y anuncios.</p>
-          <p><b>Setup:</b> $249.990 CLP</p>
-          <p class="mb-2"><b>Mensual:</b> $79.990 CLP</p>
-          <ul class="list-disc ml-5 text-gray-300 space-y-2">
-            <li>Todo lo del plan Motor</li>
-            <li>Embudo completo: landing de captura + página de ventas + <b>VSL</b></li>
-            <li>Automatización con CRM (HubSpot/Zoho/Sheets) + email/WhatsApp</li>
-            <li><b>Campañas de pago incluidas (gestión):</b>
-              <ul class="list-disc ml-6 mt-1 space-y-1">
-                <li>Setup de hasta <b>2 campañas</b> simultáneas (Google Ads / Meta Ads)</li>
-                <li>Investigación de palabras clave/audiencias + instalación de píxeles</li>
-                <li>Creatividades base (2 imágenes y 1 copy por conjunto) + A/B testing</li>
-                <li>Optimización semanal + <b>reporte mensual</b> con leads y KPIs</li>
-              </ul>
-            </li>
-            <li>Hasta 10 casillas de correo (5 GB c/u) o integración con proveedor dedicado</li>
-            <li>5 horas/mes de soporte y mejoras</li>
-          </ul>
-          <p class="text-xs text-gray-500 mt-4">El <b>presupuesto de anuncios</b> (Google/Meta) se paga directo al proveedor y no está incluido en la mensualidad.</p>
-        </div>
-      </div>
-
-      <div class="mt-8 grid md:grid-cols-3 gap-4 text-sm text-gray-300">
-        <div class="bg-black/30 p-4 rounded-xl border border-gray-800">
-          <h4 class="font-bold mb-2">Infraestructura</h4>
-          <p>Dominio .cl no incluido (puedes traer el tuyo). CDN y WAF disponibles en planes 2–3. Migraciones de hosting y correos: incluidas desde el plan 2.</p>
-        </div>
-        <div class="bg-black/30 p-4 rounded-xl border border-gray-800">
-          <h4 class="font-bold mb-2">Soporte</h4>
-          <p>Horario hábil Chile. Canales: email/ticket (plan 1), + WhatsApp prioritario (planes 2–3). Tiempo de respuesta típico: 24–48h (plan 1), 12–24h (plan 2–3).</p>
-        </div>
-        <div class="bg-black/30 p-4 rounded-xl border border-gray-800">
-          <h4 class="font-bold mb-2">Términos</h4>
-          <p>Setup: 50% para iniciar y 50% contra entrega. Mensualidad: pago por adelantado (1–5 de cada mes). Sin cláusula de permanencia: puedes pausar o cancelar con 30 días.</p>
-        </div>
-      </div>
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex-col items-center justify-center">
+        <button id="menu-close-btn" class="absolute top-6 right-6 text-white">
+            <svg class="h-8 w-8" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="flex flex-col items-center space-y-8">
+            <a href="#servicios" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Servicios</a>
+            <a href="#planes" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Planes</a>
+            <a href="#contacto" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Nosotros</a>
+            <a href="#contacto" class="text-white text-3xl font-light hover:neon-accent transition-colors duration-300 mobile-link">Contacto</a>
+        </nav>
     </div>
-  </section>
 
-  <!-- COMPARATIVA ENFOQUE ESTUDIO JURÍDICO -->
-  <section id="comparativa" class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-2 text-center">Para Estudios Jurídicos: lo que realmente importa</h2>
-      <p class="text-gray-400 text-center max-w-3xl mx-auto mb-10">Checklist para comparar proveedores y elegir con confianza.</p>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="min-h-screen flex items-center justify-center pt-32 pb-16 px-4">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-fade-in-down">
+                    Tu Presencia Digital, <span class="neon-accent">Resuelta.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto mb-12 animate-fade-in-up">
+                    Nos convertimos en tu socio tecnológico. Diseñamos, construimos y mantenemos tu página web para que te dediques a lo que realmente importa: tu negocio.
+                </p>
+                <a href="#planes" class="neon-bg text-black font-bold py-4 px-10 rounded-lg hover:bg-white transition-all duration-300 transform hover:scale-105 inline-block animate-fade-in-up" style="animation-delay: 0.2s;">
+                    Conoce Nuestros Planes
+                </a>
+            </div>
+        </section>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-black/40 p-6 rounded-2xl border border-gray-800">
-          <h3 class="text-xl font-bold mb-4">Entregables clave</h3>
-          <ul class="list-disc ml-5 space-y-2 text-gray-300">
-            <li>Arquitectura de servicios legales y páginas por práctica</li>
-            <li>Formularios con consentimiento y cláusulas de privacidad</li>
-            <li>Botón WhatsApp + agenda de consulta inicial</li>
-            <li>Blog/boletín jurídico y biblioteca de recursos</li>
-            <li>Casos/experiencia y testimonios verificados</li>
-          </ul>
+        <!-- SERVICIOS SECTION -->
+        <section id="servicios" class="py-20 px-4">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Un Socio Tecnológico, no un simple Proveedor</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-12">Te damos la tranquilidad de que tu operación digital funciona sin problemas.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        <h3 class="text-2xl font-bold mb-3">Diseño y Desarrollo Web</h3>
+                        <p class="text-gray-400">Creamos sitios web a medida, desde páginas corporativas hasta plataformas complejas. Modernas, rápidas y optimizadas para todos los dispositivos.</p>
+                    </div>
+                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        <h3 class="text-2xl font-bold mb-3">Mantenimiento y Seguridad</h3>
+                        <p class="text-gray-400">Duerme tranquilo. Nos encargamos de las actualizaciones, copias de seguridad y monitoreo de seguridad 24/7 para prevenir problemas antes de que ocurran.</p>
+                    </div>
+                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 text-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="neon-accent mb-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <h3 class="text-2xl font-bold mb-3">Soporte y Migración</h3>
+                        <p class="text-gray-400">Gestionamos tus correos corporativos y te asistimos en la migración de tus sistemas actuales. Estamos para resolver dudas y ejecutar los cambios que tu negocio necesite.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLANES SECTION -->
+        <section id="planes" class="py-20 px-4 bg-black bg-opacity-20">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Nuestro Modelo de Socio Tecnológico</h2>
+                <p class="text-gray-400 max-w-3xl mx-auto mb-12">Un setup inicial accesible y un plan mensual que garantiza tu tranquilidad y el óptimo funcionamiento de tu web.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    
+                    <!-- Plan 1: Socio Digital -->
+                    <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 flex flex-col text-left">
+                        <h3 class="text-2xl font-bold mb-2">Plan Socio Digital</h3>
+                        <p class="text-gray-400 mb-4">Ideal para profesionales y empresas que necesitan una presencia sólida y confiable.</p>
+                        <div class="mb-2">
+                            <p class="text-4xl font-bold inline-block mr-2">$49.990</p>
+                            <p class="inline-block text-gray-400">CLP / Mensual</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-6">Valores netos. Impuestos de servicios profesionales no incluidos.</p>
+                        <p class="text-sm text-gray-400 mb-6">Requiere un pago único de implementación y diseño desde $149.990 (neto).</p>
+                        <ul class="space-y-3 text-gray-300 mb-8 flex-grow">
+                            <li>✔️ <b>Hosting</b> de alta velocidad</li>
+                            <li>✔️ <b>Certificado de Seguridad</b> SSL</li>
+                            <li>✔️ <b>Actualizaciones</b> de seguridad y plugins</li>
+                            <li>✔️ <b>Copias de seguridad</b> semanales</li>
+                            <li>✔️ <b>Soporte</b> vía ticket y email</li>
+                            <li>✔️ <b>Gestión de hasta 10</b> correos corporativos</li>
+                            <li>✔️ <b>2 horas</b> para modificaciones mensuales</li>
+                        </ul>
+                        <a href="#contacto" class="mt-auto w-full text-center bg-transparent border neon-border neon-accent font-bold py-3 px-8 rounded-lg hover:neon-bg hover:text-black transition-all duration-300">Contratar Plan</a>
+                    </div>
+
+                    <!-- Plan 2: Socio Estratégico (Recomendado) -->
+                    <div class="bg-black bg-opacity-60 p-8 rounded-2xl border-2 neon-border flex flex-col text-left transform md:scale-105">
+                         <p class="absolute -top-4 left-1/2 -translate-x-1/2 neon-bg text-black text-sm font-bold px-3 py-1 rounded-full">RECOMENDADO</p>
+                        <h3 class="text-2xl font-bold mb-2">Plan Socio Estratégico</h3>
+                        <p class="text-gray-400 mb-4">Para empresas en crecimiento que requieren soporte prioritario y mayor capacidad.</p>
+                        <div class="mb-2">
+                            <p class="text-4xl font-bold inline-block mr-2">$69.990</p>
+                            <p class="inline-block text-gray-400">CLP / Mensual</p>
+                        </div>
+                        <p class="text-xs text-gray-500 mb-6">Valores netos. Impuestos de servicios profesionales no incluidos.</p>
+                        <p class="text-sm text-gray-400 mb-6">Requiere un pago único de implementación y diseño desde $149.990 (neto).</p>
+                        <ul class="space-y-3 text-gray-300 mb-8 flex-grow">
+                            <li>✔️ <b>Todo lo del Plan Socio Digital</b></li>
+                            <li>✔️ <b>Copias de seguridad</b> diarias</li>
+                            <li>✔️ <b>Soporte prioritario</b> vía WhatsApp</li>
+                            <li>✔️ <b>Gestión de hasta 25</b> correos corporativos</li>
+                            <li>✔️ <b>Asistencia en migración</b> de correos existentes</li>
+                            <li>✔️ <b>4 horas</b> para modificaciones mensuales</li>
+                            <li>✔️ <b>Informe de rendimiento</b> y analítica web</li>
+                        </ul>
+                         <a href="#contacto" class="mt-auto w-full text-center neon-bg text-black font-bold py-3 px-8 rounded-lg hover:bg-white transition-all duration-300">Contratar Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO SECTION -->
+        <section id="contacto" class="py-20 px-4">
+            <div class="container mx-auto text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos de tu Proyecto</h2>
+                <p class="text-gray-400 mb-8 max-w-3xl mx-auto">
+                    Somos un equipo liderado por Gustavo Franco, arquitecto y desarrollador con una visión que combina el pensamiento estructurado y la atención al detalle de la arquitectura con la agilidad y el poder de la tecnología. No solo construimos sitios web; diseñamos ecosistemas digitales eficientes y escalables para que nuestros socios puedan prosperar.
+                </p>
+                <div class="bg-black bg-opacity-40 p-8 rounded-2xl border border-gray-800 inline-block">
+                    <p class="text-lg text-gray-300">Email: <a href="mailto:contacto@aceleradortech.com" class="font-bold neon-accent hover:text-white">contacto@aceleradortech.com</a></p>
+                    <p class="text-lg text-gray-300 mt-2">Teléfono: <a href="tel:+56958101807" class="font-bold neon-accent hover:text-white">+56 9 5810 1807</a></p>
+                    <p class="text-lg text-gray-300 mt-2">Ubicación: <span class="font-bold text-gray-200">Mons. Escrivá de Balaguer 14360, Lo Barnechea, Santiago.</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- FOOTER -->
+    <footer class="text-center text-gray-500 py-8 px-4 border-t border-gray-800">
+        <div class="container mx-auto">
+            <p>&copy; <span id="year"></span> AceleradorTech. Todos los derechos reservados.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:neon-accent transition-colors">Términos y Condiciones</a>
+                <span>|</span>
+                <a href="#" class="hover:neon-accent transition-colors">Política de Privacidad</a>
+            </div>
         </div>
-        <div class="bg-black/40 p-6 rounded-2xl border border-gray-800">
-          <h3 class="text-xl font-bold mb-4">Seguridad y cumplimiento</h3>
-          <ul class="list-disc ml-5 space-y-2 text-gray-300">
-            <li>SSL, hardening, doble factor en admin</li>
-            <li>Backups automatizados con retención definida</li>
-            <li>Correos con SPF, DKIM y DMARC</li>
-            <li>Políticas de tratamiento de datos y cookies</li>
-            <li>Accesos y propiedad: cuentas a nombre del estudio</li>
-          </ul>
-        </div>
-      </div>
+    </footer>
 
-      <div class="mt-8 overflow-x-auto">
-        <table class="min-w-[800px] w-full text-left text-sm">
-          <thead>
-            <tr class="bg-black/40">
-              <th class="p-3 font-semibold">Criterio</th>
-              <th class="p-3 font-semibold">Cimiento</th>
-              <th class="p-3 font-semibold">Motor</th>
-              <th class="p-3 font-semibold">Socio</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-800">
-            <tr><td class="p-3">Secciones sitio</td><td class="p-3">1–5</td><td class="p-3">Hasta 10</td><td class="p-3">Ilimitadas razonables</td></tr>
-            <tr><td class="p-3">Backups</td><td class="p-3">Semanal (7d)</td><td class="p-3">Diario (14d)</td><td class="p-3">Diario + offsite (30d)</td></tr>
-            <tr><td class="p-3">Correos incluidos</td><td class="p-3">1 (2 GB)</td><td class="p-3">5 (2 GB c/u)</td><td class="p-3">10 (5 GB c/u)</td></tr>
-            <tr><td class="p-3">Campañas de pago</td><td class="p-3">—</td><td class="p-3">—</td><td class="p-3">Google/Meta (2 simultáneas)</td></tr>
-            <tr><td class="p-3">Automatización CRM</td><td class="p-3">—</td><td class="p-3">—</td><td class="p-3">Sí (HubSpot/Zoho/Sheets)</td></tr>
-            <tr><td class="p-3">Reporte mensual</td><td class="p-3">Rendimiento</td><td class="p-3">Rendimiento + SEO</td><td class="p-3">Leads + KPIs</td></tr>
-            <tr><td class="p-3">Tiempo de respuesta</td><td class="p-3">24–48h</td><td class="p-3">12–24h</td><td class="p-3">12–24h</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
+    <script>
+        // --- Mobile Menu Logic ---
+        const menuBtn = document.getElementById('menu-btn');
+        const menuCloseBtn = document.getElementById('menu-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  <!-- SECTORES -->
-  <section id="sectores" class="py-20 px-4 text-center">
-    <h2 class="text-3xl font-bold mb-6">Sectores que ayudamos</h2>
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-7xl mx-auto">
-      <div class="flex flex-col items-center bg-black/40 p-4 rounded-lg">
-        <img src="https://cdn-icons-png.flaticon.com/512/3063/3063788.png" alt="Estudios Jurídicos" class="w-12 h-12 mb-2" />
-        Estudios jurídicos
-      </div>
-      <div class="flex flex-col items-center bg-black/40 p-4 rounded-lg">
-        <img src="https://cdn-icons-png.flaticon.com/512/1642/1642589.png" alt="Corredores" class="w-12 h-12 mb-2" />
-        Corredores de propiedades
-      </div>
-      <div class="flex flex-col items-center bg-black/40 p-4 rounded-lg">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Marcas personales" class="w-12 h-12 mb-2" />
-        Marcas personales
-      </div>
-      <div class="flex flex-col items-center bg-black/40 p-4 rounded-lg">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135680.png" alt="Academias" class="w-12 h-12 mb-2" />
-        Academias y educación
-      </div>
-      <div class="flex flex-col items-center bg-black/40 p-4 rounded-lg">
-        <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" alt="Libros y autores" class="w-12 h-12 mb-2" />
-        Autores y lanzamientos (landing)
-      </div>
-    </div>
-  </section>
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+        });
 
-  <!-- PORTAFOLIO -->
-  <section id="portafolio" class="py-20 px-4">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl font-bold mb-6 text-center">Portafolio</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <a href="https://gustavofranco.cl" target="_blank" class="block bg-black/40 rounded-xl border border-gray-800 overflow-hidden">
-          <img src="https://via.placeholder.com/800x450" alt="gustavofranco.cl" class="w-full h-48 object-cover" />
-          <div class="p-4">gustavofranco.cl</div>
-        </a>
-        <a href="https://combate.francosinmiedos.com" target="_blank" class="block bg-black/40 rounded-xl border border-gray-800 overflow-hidden">
-          <img src="https://via.placeholder.com/800x450" alt="combate.francosinmiedos.com" class="w-full h-48 object-cover" />
-          <div class="p-4">combate.francosinmiedos.com (landing libro)</div>
-        </a>
-        <a href="https://gfrancoarq.github.io/weather-app/" target="_blank" class="block bg-black/40 rounded-xl border border-gray-800 overflow-hidden">
-          <img src="https://via.placeholder.com/800x450" alt="Weather App" class="w-full h-48 object-cover" />
-          <div class="p-4">Weather App</div>
-        </a>
-      </div>
-    </div>
-  </section>
+        menuCloseBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+        });
+        
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-20 px-4 text-center">
-    <h2 class="text-3xl font-bold mb-4">Hablemos</h2>
-    <p class="text-gray-300 mb-8">Agenda una llamada o escríbenos por WhatsApp. Respuesta en horario hábil (Chile).</p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:contacto@aceleradortech.com" class="accent-bg text-black font-semibold px-6 py-3 rounded-lg">Enviar correo</a>
-      <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quiero%20asesor%C3%ADa%20para%20mi%20estudio%20jur%C3%ADdico" target="_blank" class="border border-green-400/60 text-green-400 px-6 py-3 rounded-lg font-semibold hover:bg-green-400/10">WhatsApp directo</a>
-      <a href="tel:+56958101807" class="border border-gray-700 px-6 py-3 rounded-lg font-semibold">Llamar</a>
-    </div>
-  </section>
-
-  <footer class="text-center text-gray-500 py-8 border-t border-gray-800">
-    <p>&copy; <span id="year"></span> AceleradorTech. Todos los derechos reservados.</p>
-  </footer>
-
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/56958101807?text=Hola%20Gustavo%2C%20quiero%20asesor%C3%ADa%20para%20mi%20estudio%20jur%C3%ADdico" target="_blank" class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 bg-green-500 text-black font-semibold px-4 py-3 rounded-full shadow-lg hover:scale-105 transition">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163A11.867 11.867 0 0 1 0 11.999C0 5.373 5.373 0 12 0s12 5.373 12 12-5.373 12-12 12a11.95 11.95 0 0 1-6.357-1.84L.057 24z"/><path d="M8.1 7.9c-.2-.5-.4-.5-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1s1 2.4 1.2 2.6c.2.2 1.8 2.9 4.4 4 2.2.9 2.7.8 3.2.7.5-.1 1.6-.7 1.8-1.3.2-.6.2-1.1.1-1.3-.1-.2-.2-.3-.5-.5s-1.6-.8-1.8-.9c-.2-.1-.4-.1-.6.1-.2.2-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-1-.9-1.5-2-1.7-2.3-.2-.3 0-.5.1-.7.1-.2.2-.3.3-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.5-1.3-.7-1.8z"/></svg>
-    WhatsApp
-  </a>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+        // --- Update Year in Footer ---
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
